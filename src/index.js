@@ -1,3 +1,4 @@
+import SiteHeader from './components/siteHeader';
 import MovieReviewPage from "./pages/movieReviewPage";
 
 import React from "react";
@@ -12,6 +13,7 @@ import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; // NEW
 const App = () => {
   return (
     <BrowserRouter>
+    <SiteHeader/>
       <ul>
         <li>
           <Link to="/">Home</Link>
