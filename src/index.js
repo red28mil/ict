@@ -9,9 +9,22 @@ import MoviePage from "./pages/movieDetailsPage";
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
 
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; // NEW
+import { QueryClientProvider, QueryClient } from 'react-query';
+import {ReactQueryDevtools} from 'react-query/devtools';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 360000,
+      refetchInterval: 360000, 
+      refetchOnWindowFocus: false
+    },
+  },
+});
 
 const App = () => {
   return (
+    <QueryClientProvider client={queryClient}>
     <BrowserRouter>
     <SiteHeader/>
       <ul>
@@ -21,8 +34,12 @@ const App = () => {
         <li>
           <Link to="/movies/favorites">Favorites</Link>
         </li>
+        <li>
+          <Link to="/movies/upcoming">Upcoming</Link>
+        </li>
       </ul>
       <Switch>
+      
       <Route path="/reviews/:id" component={MovieReviewPage}/>
         <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
         <Route path="/movies/:id" component={MoviePage} />
@@ -31,6 +48,8 @@ const App = () => {
         <Redirect from="*" to="/" />
       </Switch>
     </BrowserRouter>
+    <ReactQueryDevtools initialIsOpen={false} />
+   </QueryClientProvider>
   );
 };
 
