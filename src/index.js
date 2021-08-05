@@ -1,6 +1,6 @@
 import SiteHeader from './components/siteHeader';
 import MovieReviewPage from "./pages/movieReviewPage";
-
+import MoviesContextProvider from "./contexts/moviesContext";
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -27,17 +27,9 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
     <BrowserRouter>
     <SiteHeader/>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/movies/favorites">Favorites</Link>
-        </li>
-        <li>
-          <Link to="/movies/upcoming">Upcoming</Link>
-        </li>
-      </ul>
+    <MoviesContextProvider>
+      {" "}
+     
       <Switch>
       
       <Route path="/reviews/:id" component={MovieReviewPage}/>
@@ -47,6 +39,7 @@ const App = () => {
         <Route exact path="/" component={HomePage} />
         <Redirect from="*" to="/" />
       </Switch>
+      </MoviesContextProvider>
     </BrowserRouter>
     <ReactQueryDevtools initialIsOpen={false} />
    </QueryClientProvider>
