@@ -3,7 +3,7 @@ import MovieReviewPage from "./pages/movieReviewPage";
 import MoviesContextProvider from "./contexts/moviesContext";
 import React from "react";
 import ReactDOM from "react-dom";
-
+import AddMovieReviewPage from './pages/addMovieReviewPage';
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
@@ -29,9 +29,9 @@ const App = () => {
     <SiteHeader/>
     <MoviesContextProvider>
       {" "}
-     
+
       <Switch>
-      
+      <Route exact path="/reviews/form" component={AddMovieReviewPage} />
       <Route path="/reviews/:id" component={MovieReviewPage}/>
         <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
         <Route path="/movies/:id" component={MoviePage} />
