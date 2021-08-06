@@ -31,7 +31,7 @@ const UpcomingMoviesPage = (props) => {
       action={(movie) => {
         return <>
             
-            return <AddToWatchIcon movie={movie} />
+            <AddToWatchIcon movie={movie} />
             
             </>
       }}
