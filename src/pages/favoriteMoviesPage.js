@@ -33,7 +33,7 @@ const toDo = () => true;
 
   return (
     <PageTemplate
-      title="Favourite Movies"
+      title="Favourite  good Movies"
       movies={movies}
       action={(movie) => {
         return(
