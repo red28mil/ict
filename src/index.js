@@ -8,7 +8,7 @@ import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
-import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; // NEW
+import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; 
 import { QueryClientProvider, QueryClient } from 'react-query';
 import {ReactQueryDevtools} from 'react-query/devtools';
 
