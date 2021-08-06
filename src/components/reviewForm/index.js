@@ -194,6 +194,7 @@ const ReviewForm = ({ movie, history }) => {
       </form>
     </Box>
   );
+  
 };
 
 export default withRouter(ReviewForm);
