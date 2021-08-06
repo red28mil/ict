@@ -28,7 +28,7 @@ const HomePage = (props) => {
       title="Discover lots of Movies"
       movies={movies}
       action={(movie) => {
-        return <AddToFavoritesIcon movie={movie} />
+        return < AddToFavoritesIcon movie={movie} />
       }}
     />    
   );
